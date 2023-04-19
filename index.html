@@ -88,6 +88,7 @@ async function getText(file) {
       throw new Error("Network response was not ok");
     }
     let myText = await myObject.text();
+    const obj = JSON.parse(myText);
     console.log("Response data:", myText);
     document.getElementById("demo").innerHTML = myText;
   } catch (error) {
