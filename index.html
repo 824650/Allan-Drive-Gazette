@@ -18,7 +18,7 @@
       <link rel="shortcut icon" href="\icon.png">
   <title>Allan Drive Gazette</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
- 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
 	<style>
 		* {
 			box-sizing: border-box;
@@ -51,7 +51,7 @@
 		.weather-info {
 			align-items: center;
 			display: flex;
-			justify-content: space-between;
+			flex-direction: column;
 			margin-bottom: 20px;
 		}
 		
@@ -76,12 +76,32 @@
 			border-radius: 50%;
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 		}
-		
-		.last-updated {
-			color: #777;
-			font-size: 14px;
-			margin-top: 20px;
-		}
+
+        .weather-data {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .weather-data__label {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .weather-data__value {
+            font-size: 18px;
+            color: #555;
+            margin-left: 10px;
+        }
+
+        .last-updated {
+            color: #777;
+            font-size: 14px;
+            margin-top: 20px;
+        }
 	</style>
 <style>
 body, html {
@@ -168,6 +188,24 @@ getText(file);
 			<p class="temp">20&deg;C</p>
 			<p class="conditions">Sunny</p>
 			<img src="https://cdn.weatherapi.com/weather/64x64/day/389.png" alt="Weather Image" class="weather-image">
+		</div>
+		<div class="weather-data">
+			<div class="weather-data__item">
+				<div class="weather-data__label">Feels like:</div>
+				<div class="weather-data__value">18&deg;C</div>
+			</div>
+			<div class="weather-data__item">
+				<div class="weather-data__label">Wind Speed:</div>
+				<div class="weather-data__value">12 km/h</div>
+			</div>
+			<div class="weather-data__item">
+				<div class="weather-data__label">Wind Direction:</div>
+				<div class="weather-data__value">NE</div>
+			</div>
+			<div class="weather-data__item">
+				<div class="weather-data__label">UV:</div>
+				<div class="weather-data__value">3</div>
+			</div>
 		</div>
 		<p class="last-updated">Last Updated: 21 April 2023 10:30 AM</p>
 	</div>
