@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -154,16 +155,6 @@ body, html {
     <button>Hire me</button>
   </div>
 </div>
-
-<p>Page Content..</p>
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1>JavaScript Fetch API</h1>
-<h2>The fetch() Method</h2>
-<p id="demo">Fetch a file to change this text.</p>
-
 <script>
 let file = "https://api.weatherapi.com/v1/current.json?key=6ac1c5b7176b487c96803538231804&q=L7E1R9&aqi=no"
 async function getText(file) {
@@ -175,7 +166,18 @@ async function getText(file) {
     let myText = await myObject.text();
     const obj = JSON.parse(myText);
     console.log("Response data:", myText);
-    document.getElementById("demo").innerHTML = myText;
+    document.getElementById("temp").innerHTML = obj.current.temp_c + "&deg;C";
+    document.getElementById("condition").innerHTML = obj.current.condition.text;
+          document.getElementById("feelslike").innerHTML = obj.current.feelslike_c + "&deg;C";
+          document.getElementById("windspeed").innerHTML = obj.current.wind_kph + " kp/h";
+                document.getElementById("direction").innerHTML = obj.current.wind_dir;
+                      document.getElementById("uv").innerHTML = obj.current.uv;
+                            document.getElementById("lastupdated").innerHTML = "Last Updated: " + obj.current.last_updated;
+                            document.getElementById("icon").src = "https:" + obj.current.condition.icon;
+
+
+
+
   } catch (error) {
     console.error("Error fetching data:", error);
   }
@@ -185,32 +187,30 @@ getText(file);
 <div class="weather-center">
 		<h2 class="center-heading">Weather Center</h2>
 		<div class="weather-info">
-			<p class="temp">20&deg;C</p>
-			<p class="conditions">Sunny</p>
-			<img src="https://cdn.weatherapi.com/weather/64x64/day/389.png" alt="Weather Image" class="weather-image">
+			<p class="temp" id="temp">undefined</p>
+			<p class="conditions" id="condition">undefined</p>
+			<img src="https://placehold.co/64x64" alt="Weather Image" class="weather-image" id="icon">
 		</div>
 		<div class="weather-data">
 			<div class="weather-data__item">
 				<div class="weather-data__label">Feels like:</div>
-				<div class="weather-data__value">18&deg;C</div>
+				<div class="weather-data__value" id="feelslike">undefined</div>
 			</div>
 			<div class="weather-data__item">
 				<div class="weather-data__label">Wind Speed:</div>
-				<div class="weather-data__value">12 km/h</div>
+				<div class="weather-data__value" id="windspeed">undefined</div>
 			</div>
 			<div class="weather-data__item">
 				<div class="weather-data__label">Wind Direction:</div>
-				<div class="weather-data__value">NE</div>
+				<div class="weather-data__value" id="direction">undefined</div>
 			</div>
 			<div class="weather-data__item">
 				<div class="weather-data__label">UV:</div>
-				<div class="weather-data__value">3</div>
+				<div class="weather-data__value" id="uv">undefined</div>
 			</div>
 		</div>
-		<p class="last-updated">Last Updated: 21 April 2023 10:30 AM</p>
+		<p class="last-updated" id="lastupdated">Last Updated: undefined</p>
 	</div>
-</body>
-</html>
 
 </body>
 </html>
