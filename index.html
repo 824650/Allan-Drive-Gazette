@@ -1,11 +1,8 @@
 
-
-<!DOCTYPE html>
-<html>
-<head>
- <!-- Hotjar Tracking Code for Allan Drive Gazette Website -->
-	<!-- Include a required theme -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <!DOCTYPE html>
+  <html>
+  <head>
+  <title>Allan Drive Gazette</title>
 <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -16,19 +13,623 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+  	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
-      <link rel="shortcut icon" href="\image.png">
-  <title>Allan Drive Gazette</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
-	<style>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/d9c39fbf41.js" crossorigin="anonymous"></script>
+  <style>
+  :root {
+  --font-color: 20, 20, 20;
+  --lighter-font-color: 80, 80, 80;
+  --highlight-color: 3, 169, 244;
+  --body-color: 30, 40, 50;
+  
+  --theme-background: 255, 255, 255;
+  --theme-primary: 0, 0, 0;
+}
+
+body {
+  background-color: rgb(var(--body-color));
+  margin: 0px;
+}
+
+body::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgb(var(--body-color));
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, input, select, button, span, a, p {
+  color: rgb(var(--font-color));
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.highlight {
+  color: rgb(var(--highlight-color));
+}
+
+.fancy-scrollbar::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+.fancy-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.fancy-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+}
+
+#main-wrapper {
+  height: 100%;
+  background-color: rgb(10 10 10);
+  padding-bottom: 1rem;
+  overflow: auto;
+}
+
+#main {
+  position: relative;
+}
+
+#nav {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  position: absolute;
+  top: 0px;
+  left: 0px;  
+  z-index: 10;
+}
+
+#nav > .nav-logo {
+  height: 2rem;
+  display: block;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#nav > .nav-logo > img {
+  height: inherit;
+}
+
+#header {
+  background-image: url("https://allandrive.peelschools.org/images/c4dfd7d8-d979-48cb-9c3b-d01572a0b6b9");
+/*   https://images.unsplash.com/photo-1574169208507-84376144848b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1479&q=80 */
+/*   https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1059&q=80 */
+/*   https://images.unsplash.com/photo-1506259091721-347e791bab0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80 */
+  background-position: center;
+  background-size: cover;
+  padding-top: 4rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+#header:after,
+#header:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+#header:after {
+  background: radial-gradient(rgba(10 10 10 / 20%), rgb(10 10 10));
+  z-index: 1;
+}
+
+#header:before {
+  background: linear-gradient(to bottom, rgb(10 10 10), rgba(10 10 10 / 10%), rgb(10 10 10));
+  z-index: 2;
+}
+
+#header > .header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 3;
+}
+
+#header > .header-content > .article-count-wrapper {
+  display: flex;
+  justify-content: center;  
+}
+
+#header > .header-content > .article-count-wrapper > .article-count {  
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+#header > .header-content > .article-count-wrapper > .article-count > .value-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#header > .header-content > .article-count-wrapper > .article-count > .value-wrapper > i {
+  color: rgb(76, 175, 80);
+  font-size: 0.6rem;
+}
+
+#header > .header-content > .article-count-wrapper > .article-count > .value-wrapper > .value {
+  height: 4rem;
+  font-family: 'Rubik', sans-serif;
+  color: white;
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+  text-shadow: 0rem 0rem 0.15rem rgba(0 0 0 / 50%);
+}
+
+#header > .header-content > .article-count-wrapper > .article-count > .label {
+  color: rgb(230 230 230);
+  font-weight: 500;
+  margin-left: 1.25rem;
+}
+
+#header > .header-content > .header-stats-wrapper {  
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(20 20 20);
+  gap: 0.5rem;
+  margin: 0rem 1rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+
+#header > .header-content > .header-stats-wrapper > .header-stat {  
+  display: flex;
+}
+
+#header > .header-content > .header-stats-wrapper > .header-stat > h3 {
+  display: flex;
+  flex-direction: column;
+}
+
+#header > .header-content > .header-stats-wrapper > .header-stat > h3 * {
+  text-shadow: 0rem 0rem 0.1rem rgba(0 0 0 / 40%);
+}
+
+#header > .header-content > .header-stats-wrapper > .header-stat > h3 > .body {
+  display: inline-flex;
+  align-self: center;
+  gap: 0.25rem;
+}
+
+#header > .header-content > .header-stats-wrapper > .header-stat > h3 > .body > i {  
+  align-self: center;
+  font-size: 0.9rem;
+}
+
+#header > .header-content > .header-stats-wrapper > .header-stat > h3 > .body > span {
+  display: inline-flex;
+  color: white;
+  font-weight: 500;
+}
+
+#header > .header-content > .header-stats-wrapper > .header-stat > h3 > .body > .value {  
+  font-size: 1.5rem; 
+  align-self: center;
+}
+
+#header > .header-content > .header-stats-wrapper > .header-stat > h3 > .label {  
+  color: rgb(230 230 230);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding-left: 1.25rem;
+}
+
+#header > .header-content > .header-stats-wrapper > .users-stat > h3 > .body > i {
+  color: rgb(76, 175, 80);
+}
+
+#header > .header-content > .header-stats-wrapper > .editors-stat > h3 > .body > i {
+  color: rgb(3, 169, 244);
+}
+
+#header > .header-content > .header-menu {  
+  display: flex;
+  justify-content: space-between;
+  margin: 0rem 1rem; 
+}
+
+#header > .header-content > .header-menu > button {  
+  display: grid;
+  place-items: center;
+  background-color: rgb(20 20 20);
+  height: 2.6rem;
+  padding: 0rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  cursor: pointer;
+}
+
+#header > .header-content > .header-menu > button:hover,
+#header > .header-content > .header-menu > button:focus {  
+  background-color: rgb(30 30 30);
+}
+
+#header > .header-content > .header-menu > button > i {  
+  color: white; 
+  font-size: 1.25rem;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;  
+  position: relative;
+  z-index: 2;
+}
+
+#content > .articles-section {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#content > .featured {
+  background-color: rgb(32, 66, 82);
+}
+
+#content > .on-this-day {
+  background-color: rgb(93, 22, 36);
+}
+
+#content > .articles-section > .title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 3rem;
+  margin-top: 2rem;
+}
+
+#content > .articles-section > .title > i {
+  color: rgba(255 255 255 / 10%);
+  font-size: 8rem; 
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+#content > .articles-section > .title > .value {
+  color: white;
+  font-size: 2rem;
+}
+
+#content > .articles-section > .articles {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  position: relative;
+  overflow: auto;
+  z-index: 2;
+}
+
+
+#content > .articles-section > .articles::-webkit-scrollbar {
+  display: none;
+}
+
+#content > .articles-section > .articles > .article {
+  width: 16rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  outline: none;
+  text-decoration: none;
+}
+
+#content > .featured > .featured-articles > .featured-article {
+  background-color: rgb(55, 85, 100);
+}
+
+#content > .featured > .featured-articles > .featured-article:hover,
+#content > .featured > .featured-articles > .featured-article:focus {
+  background-color: rgb(65, 94, 108);
+}
+
+#content > .on-this-day > .on-this-day-articles > .on-this-day-article {
+  background-color: rgb(110, 46, 58);  
+}
+
+#content > .on-this-day > .on-this-day-articles > .on-this-day-article:hover,
+#content > .on-this-day > .on-this-day-articles > .on-this-day-article:focus {
+  background-color: rgb(117, 57, 69);
+}
+
+#content > .articles-section > .articles > .article > img {
+  border-radius: 0.4rem;
+  height: 10rem;
+  width: 14rem;
+  object-fit: cover;
+}
+
+#content > .articles-section > .articles > .article > .article-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#content > .articles-section > .articles > .article > .article-info > h3 {
+  color: white; 
+}
+
+#content > .articles-section > .articles > .article > .article-info > p {
+  color: rgba(255 255 255 / 70%); 
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+}
+
+#content > .did-you-know > .title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+#content > .did-you-know > .title > i,
+#content > .did-you-know > .title > span {
+  color: white;
+}
+
+#content > .did-you-know > .title > i {
+  font-size: 0.9rem;
+}
+
+#content > .did-you-know > .title > span {
+  font-size: 1.1rem; 
+}
+
+#content > .did-you-know > .did-you-know-facts {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  overflow: auto;
+}
+
+#content > .did-you-know > .did-you-know-facts::-webkit-scrollbar {
+  display: none;
+}
+
+#content > .did-you-know > .did-you-know-facts > .did-you-know-fact {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255 255 255 / 5%);
+  outline: none;
+}
+
+#content > .did-you-know > .did-you-know-facts > .did-you-know-fact:hover,
+#content > .did-you-know > .did-you-know-facts > .did-you-know-fact:focus {
+  background-color: rgba(255 255 255 / 10%);
+}
+
+#content > .did-you-know > .did-you-know-facts > .did-you-know-fact > img {
+  height: 4rem;
+  width: 4rem;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+
+#content > .did-you-know > .did-you-know-facts > .did-you-know-fact > p {
+  color: rgba(255 255 255 / 70%); 
+  font-size: 0.8rem;
+}
+
+@media(max-width: 500px) {
+  body {
+    overflow: auto;  
+  }
+  
+  #phone {
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0px auto;
+  }
+  
+  #main-wrapper {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 6rem;
+  }
+}
+</style></head><body><script>(function(d){var s = d.createElement("script");s.setAttribute("data-account", "aIWoDt5F9o");s.setAttribute("src", "https://cdn.userway.org/widget.js");(d.body || d.head).appendChild(s);})(document)</script><noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>	</div>
+<div id="main-wrapper" class="fancy-scrollbar">
+    <div id="main">
+      <div id="nav">
+      <br>
+        <a class="nav-logo" href="/">
+          <img src="https://allandrivegazette.good-newz.org/whitelogo.png" alt="" />
+        </a>
+      </div>
+      <div id="header">
+        <div class="header-content">
+          <div class="article-count-wrapper header-section">
+            <div class="article-count">
+              <div class="value-wrapper">
+                <i class="fa-solid fa-circle"></i>
+                <h2 class="value">4</h2>
+              </div>
+              <h3 class="label">Monthly Editions</h3>
+            </div>
+          </div>
+          <div class="header-stats-wrapper header-section">
+            <div class="users-stat header-stat">
+              <h3>
+                <span class="body">
+                <i class="fa-solid fa-podcast"></i>
+                  <span class="value">5</span>
+                </span>
+                <span class="label">Podcast Episodes</span>
+              </h3>
+            </div>
+            <div class="editors-stat header-stat">
+              <h3>
+                <span class="body">
+<i class="fa-solid fa-user-group"></i>
+<span class="value">10</span>
+                </span>
+                <span class="label">Helpers</span>
+              </h3>
+            </div>
+          </div>
+          <div class="header-menu header-section">
+          </div>
+        </div>
+      </div>
+      <div id="content">
+      <div class="did-you-know">
+          <h2 class="title"><i class="fa-solid fa-question" style=""></i><span class="value" style="">Did you know...</span></h2>
+          <div class="did-you-know-facts">
+            <a class="did-you-know-fact" href="" style="cursor: text; margin: auto;">
+              <img src="https://facts.net/wp-content/uploads/2020/01/adorable-animal-blur-cat-617278.jpg" />
+              <p>A cat will spend an average of 15 hours a day sleeping. Some cats can sleep longer to a total of 20 hours a day. These felines do most of their sleeping during the day as they are generally active during the night.</p>              
+            </a>
+          </div>
+        </div>
+        <div class="did-you-know">
+          <h2 class="title"><i class="fa-solid fa-podcast"></i><span class="value">Podcast Shows</span></h2>
+          <div class="did-you-know-facts">
+          <p style="color: rgb(80, 80, 80); margin: auto;">Coming Soon ;)</p>
+            <a class="did-you-know-fact" href="#" style="display:none;">
+              <img src="https://images.unsplash.com/photo-1613757874090-456665221c00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHlyYW1pZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
+              <p>Reindeer like bananas</p>              
+            </a>
+            <a class="did-you-know-fact" href="#" style="display:none;">
+              <img src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGNhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
+              <p>This kitten has never lost a game of hide and seek. It's also never played but...</p>              
+            </a>
+          </div>
+        </div>
+        <div class="on-this-day articles-section">
+          <h2 class="title"><i class="fa-solid fa-newspaper"></i><span class="value">Monthly Editions</span></h2>
+          <div class="on-this-day-articles articles">
+            <a class="on-this-day-article article" href="https://allandrivegazette.good-newz.org/ADGJune23.pdf">
+              <img src="https://allandrivegazette.good-newz.org/thumbjune23.jpg" />
+              <div class="article-info">
+                <h3>The Allan Drive Avalanche Is... Back</h3>
+                <p>June, 2023</p>
+              </div>
+            </a>
+            <a class="on-this-day-article article" href="https://allandrivegazette.good-newz.org/ADGMay2nd.pdf">
+              <img src="https://allandrivegazette.good-newz.org/ADGMay2nd.png" />
+              <div class="article-info">
+                <h3>Mental Health Awareness Month</h3>
+                <p>May, 2023</p>
+              </div>
+            </a>
+            <a class="on-this-day-article article" href="https://allandrivegazette.good-newz.org/ADGMay23.pdf">
+              <img src="https://allandrivegazette.good-newz.org/thumbmay.png" />
+              <div class="article-info">
+                <h3>Massive Changes Incoming</h3>
+                <p>May, 2023</p>
+              </div>
+            </a>
+            <a class="on-this-day-article article" href="https://allandrivegazette.good-newz.org/ADGApril.pdf">
+              <img src="https://allandrivegazette.good-newz.org/thumbapril.png" />
+              <div class="article-info">
+                <h3>Virtual Reality is now a reality</h3>
+                <p>April, 2023</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <script>
+        let file = "https://api.weatherapi.com/v1/current.json?key=6ac1c5b7176b487c96803538231804&q=L7E1R9&aqi=no"
+async function getText(file) {
+  try {
+    let myObject = await fetch(file);
+    if (!myObject.ok) {
+      throw new Error("Network response was not ok");
+    }
+    let myText = await myObject.text();
+    const obj = JSON.parse(myText);
+    console.log("Response data:", myText);
+    document.getElementById("temp").innerHTML = obj.current.temp_c + "&deg;C";
+    document.getElementById("condition").innerHTML = obj.current.condition.text;
+          document.getElementById("fl").innerHTML = "Feels Like: " + obj.current.feelslike_c + "&deg;C";
+          document.getElementById("ws").innerHTML = "Wind Speed: " + obj.current.wind_kph + " kp/h";
+                document.getElementById("wd").innerHTML = "Wind Direction: " + obj.current.wind_dir;
+                      document.getElementById("uv").innerHTML = "UV: " + obj.current.uv;
+                            document.getElementById("lu").innerHTML = "Last Updated: " + obj.current.last_updated;
+                            document.getElementById("weatherimage").src = "https:" + obj.current.condition.icon;
+
+
+
+
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+getText(file);
+</script>
+        <div class="featured articles-section">
+          <h2 class="title"><span class="value" style="margin: auto;">Weather Center</span></h2>
+          <div class="featured-articles articles">
+            <a class="featured-article article" href="#" style="  margin: auto;" >
+              <img src="https://placehold.co/64x64" style="width: 64px; height: 64px; margin: auto;" id="weatherimage"/>
+              <div class="article-info">
+                <h1 style="margin: auto; font-weight: bold; color: white;" id="temp">Undefined</h1>
+                                <h1 style="margin: auto; color: white;" id="condition">undefined</h1>
+
+                <p style="margin: auto; display:inline;" id="fl">undefined</p>
+                <p style="margin: auto; display:inline;" id="ws">undefined</p>
+                <p style="margin: auto; display:inline;" id="wd">Wind Direction:</p>
+                <p style="margin: auto; display:inline;" id="uv">UV:</p>
+                <p style="margin: auto; display:inline;" id="lu">undefined</p>
+
+
+              </div>
+            </a>
+        
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    
+    <footer>
+    	<style>
 .goog-te-combo {
         -webkit-text-size-adjust: 100%;
     --swiper-theme-color: #007aff;
@@ -78,334 +679,27 @@ border: 0;
     font-size: 10pt;
     margin: 4px 0;
     border-radius: 10px;
-    font-family: Montserrat;
+    font-family: Rubik;
 }
 </style>
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-.topnav .icon {
-  display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-</style>
-	<style>
-		* {
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-		}
-		
-		body {
-			background-color: #f5f5f5;
-			font-family: 'Montserrat', sans-serif;
-		}
-		
-		.weather-center {
-			background-color: #fff;
-			border-radius: 10px;
-			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-			margin: 50px auto;
-			max-width: 500px;
-			padding: 30px;
-			text-align: center;
-		}
-		
-		.center-heading {
-			color: #333;
-			font-size: 32px;
-			margin-bottom: 20px;
-			text-transform: uppercase;
-		}
-		
-		.weather-info {
-			align-items: center;
-			display: flex;
-			flex-direction: column;
-			margin-bottom: 20px;
-		}
-		
-		.temp {
-			color: #f26c4f;
-			font-size: 72px;
-			font-weight: 700;
-			margin: 0;
-		}
-		
-		.conditions {
-			color: #555;
-			font-size: 24px;
-			margin: 0;
-			text-transform: uppercase;
-		}
-		
-		.weather-image {
-			height: 100px;
-			width: 100px;
-			object-fit: cover;
-			border-radius: 50%;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-		}
-
-        .weather-data {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .weather-data__label {
-            font-size: 18px;
-            font-weight: 700;
-            color: #333;
-            text-transform: uppercase;
-        }
-
-        .weather-data__value {
-            font-size: 18px;
-            color: #555;
-            margin-left: 10px;
-        }
-
-        .last-updated {
-            color: #777;
-            font-size: 14px;
-            margin-top: 20px;
-        }
-	</style>
-<style>
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://allandrive.peelschools.org/images/c4dfd7d8-d979-48cb-9c3b-d01572a0b6b9");
-  height: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
-
-.hero-text button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 10px 25px;
-  color: black;
-  background-color: #ddd;
-  text-align: center;
-  cursor: pointer;
-}
-
-.hero-text button:hover {
-  background-color: #555;
-  color: white;
-}
-</style>
-</head>
-<body onload="beta();">
-<div class="topnav" id="myTopnav" style="display:none;">
-  <a href="#home" class="active">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-<div class="hero-image">
-  <div class="hero-text">
-    <img src="https://allandrivegazette.good-newz.org/image.png" style="width:340px;height:100px;"/>
-    <p></p>
-    <button style="display:none;">Hire me</button>
-  </div>
-</div>
-<script>
-let file = "https://api.weatherapi.com/v1/current.json?key=6ac1c5b7176b487c96803538231804&q=L7E1R9&aqi=no"
-async function getText(file) {
-  try {
-    let myObject = await fetch(file);
-    if (!myObject.ok) {
-      throw new Error("Network response was not ok");
-    }
-    let myText = await myObject.text();
-    const obj = JSON.parse(myText);
-    console.log("Response data:", myText);
-    document.getElementById("temp").innerHTML = obj.current.temp_c + "&deg;C";
-    document.getElementById("condition").innerHTML = obj.current.condition.text;
-          document.getElementById("feelslike").innerHTML = obj.current.feelslike_c + "&deg;C";
-          document.getElementById("windspeed").innerHTML = obj.current.wind_kph + " kp/h";
-                document.getElementById("direction").innerHTML = obj.current.wind_dir;
-                      document.getElementById("uv").innerHTML = obj.current.uv;
-                            document.getElementById("lastupdated").innerHTML = "Last Updated: " + obj.current.last_updated;
-                            document.getElementById("icon").src = "https:" + obj.current.condition.icon;
-
-
-
-
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
-}
-getText(file);
-</script>
-	
-	<div class="weather-center">
-		<h2 class="center-heading">Translate Center</h2>
-		<center>
+    		<center>
 			<div id="google_translate_element" style=""></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 </script>
-		</center>
-		</div>
-	
-<div class="weather-center">
-		<h2 class="center-heading">Weather Center</h2>
-		<div class="weather-info">
-			<p class="temp" id="temp">undefined</p>
-			<p class="conditions" id="condition">undefined</p>
-			<img src="https://placehold.co/64x64" alt="Weather Image" class="weather-image" id="icon">
-		</div>
-		<div class="weather-data">
-			<div class="weather-data__item">
-				<div class="weather-data__label">Feels like:</div>
-				<div class="weather-data__value" id="feelslike">undefined</div>
-			</div>
-			<div class="weather-data__item">
-				<div class="weather-data__label">Wind Speed:</div>
-				<div class="weather-data__value" id="windspeed">undefined</div>
-			</div>
-			<div class="weather-data__item">
-				<div class="weather-data__label">Wind Direction:</div>
-				<div class="weather-data__value" id="direction">undefined</div>
-			</div>
-			<div class="weather-data__item">
-				<div class="weather-data__label">UV:</div>
-				<div class="weather-data__value" id="uv">undefined</div>
-			</div>
-		</div>
-		<p class="last-updated" id="lastupdated">Last Updated: undefined</p>
-	<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
-<script>(function(d){var s = d.createElement("script");s.setAttribute("data-account", "aIWoDt5F9o");s.setAttribute("src", "https://cdn.userway.org/widget.js");(d.body || d.head).appendChild(s);})(document)</script><noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>	</div>
-<div class="weather-center">
-<h1 class="center-heading">Monthly Editions</h1>
-				<a href="/ADGJune23.pdf">
+		</center><br><br>
+    <center><a href="https://codepen.io/Hyperplexed/"><p style="color: rgb(80, 80, 80);">Website Template From Hyperplexed (ty)</p></center></a><p style="color: rgb(80, 80, 80); font-size: 8px">Copyright (c) 2023 by Hyperplexed (https://codepen.io/Hyperplexed/pen/poVWobN)
 
-	<div class="weather-center" style="color: #333; font-family: Montserrat;overflow-y:scroll;">
-June Edition 2023
-<br>
-<img src="https://allandrivegazette.good-newz.org/thumbjune23.jpg" alt="June Newspaper Thumbnail" style="width:100px; height:120px"/>
-</div>
-	
-</a>
-			<a href="/ADGMay2nd.pdf">
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-	<div class="weather-center" style="color: #333; font-family: Montserrat;overflow-y:scroll;">
-May Newspaper 2nd Edition 2023
-<br>
-<img src="https://allandrivegazette.good-newz.org/thumbmay.png" alt="May Newspaper Thumbnail" style="width:100px; height:120px"/>
-</div>
-	
-</a>
-		<a href="/ADGMay23.pdf">
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-	<div class="weather-center" style="color: #333; font-family: Montserrat;overflow-y:scroll;">
-May Newspaper 2023
-<br>
-<img src="https://allandrivegazette.good-newz.org/thumbmay.png" alt="May Newspaper Thumbnail" style="width:100px; height:120px"/>
-</div>
-	
-</a>
-<a href="/ADGApril.pdf">
-<div class="weather-center" style="color: #333; font-family: Montserrat;overflow-y:scroll;">
-April Newspaper 2023
-<br>
-<img src="https://allandrivegazette.good-newz.org/thumbapril.png" alt="April Newspaper Thumbnail" style="width:100px; height:120px"/>
-</div>
-	</a>
-</div>
-<script>
-function beta() {
-Swal.fire({
-  icon: 'info',
-  title: 'Hey There!',
-  text: 'We want to say thank you for visiting the website! We really do appereciate you being here. If you could, please give us some feedback as it really helps us improve. Also, you can use the feedback widget to send bug reports as this website is in beta. Thank you :) - Nathan - Website Manager and Zoraiz - Assistant of Website Manager',
-})
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-}
-</script>
+</p>
+    </footer>
+  </div>
 </body>
 </html>
