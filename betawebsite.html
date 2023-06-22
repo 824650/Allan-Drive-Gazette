@@ -1,6 +1,9 @@
  <!DOCTYPE html>
   <html>
   <head>
+  <script>
+  
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
@@ -65,15 +68,6 @@ h1, h2, h3, input, select, button, span, a, p {
 .no-scrollbar::-webkit-scrollbar {
   height: 0px;
   width: 0px;
-}
-
-#phone {
-  background-color: rgb(var(--theme-background));
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
-  height: 851px;
-  width: 393px;  
-  margin: 100px auto;
-  position: relative;
 }
 
 #main-wrapper {
@@ -481,7 +475,7 @@ h1, h2, h3, input, select, button, span, a, p {
             <div class="article-count">
               <div class="value-wrapper">
                 <i class="fa-solid fa-circle"></i>
-                <h2 class="value">5</h2>
+                <h2 class="value">4</h2>
               </div>
               <h3 class="label">Monthly Editions</h3>
             </div>
@@ -490,8 +484,8 @@ h1, h2, h3, input, select, button, span, a, p {
             <div class="users-stat header-stat">
               <h3>
                 <span class="body">
-                <i class="fa-duotone fa-podcast"></i>
-                  <span class="value">357,123</span>
+                <i class="fa-solid fa-podcast"></i>
+                  <span class="value">5</span>
                 </span>
                 <span class="label">Podcast Episodes</span>
               </h3>
@@ -499,26 +493,29 @@ h1, h2, h3, input, select, button, span, a, p {
             <div class="editors-stat header-stat">
               <h3>
                 <span class="body">
-                  <i class="fa-solid fa-user-ninja"></i>
-                  <span class="value">1,429</span>
+<i class="fa-solid fa-user-group"></i>
+<span class="value">10</span>
                 </span>
                 <span class="label">Helpers</span>
               </h3>
             </div>
           </div>
           <div class="header-menu header-section">
-            <button type="button">
-              <i class="fa-regular fa-magnifying-glass"></i>
-            </button>
-            <button type="button">
-              <i class="fa-regular fa-ellipsis"></i>
-            </button>
           </div>
         </div>
       </div>
       <div id="content">
       <div class="did-you-know">
-          <h2 class="title"><i class="fa-solid fa-question"></i><span class="value">Did you know...</span></h2>
+          <h2 class="title"><i class="fa-solid fa-question" style=""></i><span class="value" style="">Did you know...</span></h2>
+          <div class="did-you-know-facts">
+            <a class="did-you-know-fact" href="" style="cursor: text; margin: auto;">
+              <img src="https://images.unsplash.com/photo-1613757874090-456665221c00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHlyYW1pZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
+              <p>Someone once built a pyramid with floating layers. No one stabilized them so eventually they slipped off...</p>              
+            </a>
+          </div>
+        </div>
+        <div class="did-you-know">
+          <h2 class="title"><i class="fa-solid fa-podcast"></i><span class="value">Podcast Shows</span></h2>
           <div class="did-you-know-facts">
             <a class="did-you-know-fact" href="#">
               <img src="https://images.unsplash.com/photo-1613757874090-456665221c00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHlyYW1pZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
@@ -531,13 +528,13 @@ h1, h2, h3, input, select, button, span, a, p {
           </div>
         </div>
         <div class="on-this-day articles-section">
-          <h2 class="title"><i class="fa-solid fa-sun"></i></i><span class="value">Monthly Editions</span></h2>
+          <h2 class="title"><i class="fa-solid fa-newspaper"></i><span class="value">Monthly Editions</span></h2>
           <div class="on-this-day-articles articles">
             <a class="on-this-day-article article" href="#">
-              <img src="https://images.unsplash.com/photo-1540458638618-893e9fb35c07?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80" />
+              <img src="https://allandrivegazette.good-newz.org/thumbjune23.jpg" />
               <div class="article-info">
-                <h3>1456</h3>
-                <p>Humans determine clouds do not exist, but are instead figments of our collective imagination.</p>
+                <h3>The Allan Drive Avalanche Is... Back</h3>
+                <p>June 1st, 2023</p>
               </div>
             </a>
             <a class="on-this-day-article article" href="#">
@@ -556,16 +553,51 @@ h1, h2, h3, input, select, button, span, a, p {
             </a>
           </div>
         </div>
+        <script>
+        let file = "https://api.weatherapi.com/v1/current.json?key=6ac1c5b7176b487c96803538231804&q=L7E1R9&aqi=no"
+async function getText(file) {
+  try {
+    let myObject = await fetch(file);
+    if (!myObject.ok) {
+      throw new Error("Network response was not ok");
+    }
+    let myText = await myObject.text();
+    const obj = JSON.parse(myText);
+    console.log("Response data:", myText);
+    document.getElementById("temp").innerHTML = obj.current.temp_c + "&deg;C";
+    document.getElementById("condition").innerHTML = obj.current.condition.text;
+          document.getElementById("fl").innerHTML = "Feels Like: " + obj.current.feelslike_c + "&deg;C";
+          document.getElementById("ws").innerHTML = "Wind Speed: " + obj.current.wind_kph + " kp/h";
+                document.getElementById("wd").innerHTML = "Wind Direction: " + obj.current.wind_dir;
+                      document.getElementById("uv").innerHTML = "UV: " + obj.current.uv;
+                            document.getElementById("lu").innerHTML = "Last Updated: " + obj.current.last_updated;
+                            document.getElementById("weatherimage").src = "https:" + obj.current.condition.icon;
+
+
+
+
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+getText(file);
+</script>
         <div class="featured articles-section">
           <h2 class="title"><span class="value" style="margin: auto;">Weather Center</span></h2>
           <div class="featured-articles articles">
             <a class="featured-article article" href="#" style="  margin: auto;" >
-              <img src="https://placehold.co/64x64" style="width: 64px; height: 64px; margin: auto;"/>
+              <img src="https://placehold.co/64x64" style="width: 64px; height: 64px; margin: auto;" id="weatherimage"/>
               <div class="article-info">
-                <h1 style="margin: auto; font-weight: bold; color: white;">24°C</h1>
-                                <h1 style="margin: auto; color: white;">Partly Cloudy</h1>
+                <h1 style="margin: auto; font-weight: bold; color: white;" id="temp">Undefined</h1>
+                                <h1 style="margin: auto; color: white;" id="condition">undefined</h1>
 
-                <p style="margin: auto;">> More Weather Info</p>
+                <p style="margin: auto; display:inline;" id="fl">undefined</p>
+                <p style="margin: auto; display:inline;" id="ws">undefined</p>
+                <p style="margin: auto; display:inline;" id="wd">Wind Direction:</p>
+                <p style="margin: auto; display:inline;" id="uv">UV:</p>
+                <p style="margin: auto; display:inline;" id="lu">undefined</p>
+
+
               </div>
             </a>
         
@@ -575,5 +607,17 @@ h1, h2, h3, input, select, button, span, a, p {
         
       </div>
     </div>
+    <footer>
+    <center><a href="https://codepen.io/Hyperplexed/"><p style="color: rgb(80, 80, 80);">Website Template From Hyperplexed (ty)</p></center></a><p style="color: rgb(80, 80, 80); font-size: 8px">Copyright (c) 2023 by Hyperplexed (https://codepen.io/Hyperplexed/pen/poVWobN)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+</p>
+    </footer>
   </div>
 </body>
+</html>
