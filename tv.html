@@ -532,7 +532,6 @@ h1, h2, h3, input, select, button, span, a, p {
       </div>
       <div id="content">
 	      <div class="did-you-know">
-          <h2 class="title"><i class="fa-solid fa-question" style=""></i><span class="value" style="">Weather Today</span></h2>
           <div class="did-you-know-facts" style="
     opacity: 1;
     position: fixed;
@@ -577,7 +576,6 @@ Last Updated: 2023-11-23 13:00
           </div>
         </div>
       <div class="did-you-know">
-          <h2 class="title"><i class="fa-solid fa-question" style=""></i><span class="value" style="">Weather Today</span></h2>
           <div class="did-you-know-facts">
             <a class="did-you-know-fact" href="" style="cursor: text; margin: auto;">
               <img src="https://cdn.weatherapi.com/weather/64x64/day/122.png"><p>6°C</p>
@@ -615,60 +613,7 @@ Last Updated: 2023-11-23 13:00
 </p></a>
           </div>
         </div>
-        <div class="did-you-know">
-          <h2 class="title"><i class="fa-solid fa-podcast"></i><span class="value">Podcast Shows</span></h2>
-          <div class="did-you-know-facts">
-          <p style="color: rgb(80, 80, 80); margin: auto;">Coming Soon ;)</p>
-            <a class="did-you-know-fact" href="#" style="display:none;">
-              <img src="https://images.unsplash.com/photo-1613757874090-456665221c00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHlyYW1pZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
-              <p>Reindeer like bananas</p>              
-            </a>
-            <a class="did-you-know-fact" href="#" style="display:none;">
-              <img src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGNhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
-              <p>This kitten has never lost a game of hide and seek. It's also never played but...</p>              
-            </a>
-          </div>
-        </div>
-        <div class="on-this-day articles-section">
-          <h2 class="title"><i class="fa-solid fa-newspaper"></i><span class="value">Monthly Editions</span></h2>
-          <div class="on-this-day-articles articles">
-		  <a class="on-this-day-article article" href="https://allandrivegazette.good-newz.org/monthly-gazettes/spooky-month-is-here.html">
-              <img src="https://allandrivegazette.good-newz.org/thumbnails/spooky-month-is-here-thumb.png" />
-              <div class="article-info">
-                <h3>Spooky Month Is Here 🎃</h3>
-                <p>Oct, 2023</p>
-              </div>
-            </a>
-            <a class="on-this-day-article article" href="https://allandrivegazette.good-newz.org/ADGJune23.pdf">
-              <img src="https://allandrivegazette.good-newz.org/thumbjune23.jpg" />
-              <div class="article-info">
-                <h3>The Allan Drive Avalanche Is... Back</h3>
-                <p>June, 2023</p>
-              </div>
-            </a>
-            <a class="on-this-day-article article" href="https://allandrivegazette.good-newz.org/ADGMay2nd.pdf">
-              <img src="https://allandrivegazette.good-newz.org/ADGMay2nd.png" />
-              <div class="article-info">
-                <h3>Mental Health Awareness Month</h3>
-                <p>May, 2023</p>
-              </div>
-            </a>
-            <a class="on-this-day-article article" href="https://allandrivegazette.good-newz.org/monthly-gazettes/massive-changes-incoming">
-              <img src="https://allandrivegazette.good-newz.org/thumbmay.png" />
-              <div class="article-info">
-                <h3>Massive Changes Incoming</h3>
-                <p>May, 2023</p>
-              </div>
-            </a>
-            <a class="on-this-day-article article" href="https://allandrivegazette.good-newz.org/ADGApril.pdf">
-              <img src="https://allandrivegazette.good-newz.org/thumbapril.png" />
-              <div class="article-info">
-                <h3>Virtual Reality is now a reality</h3>
-                <p>April, 2023</p>
-              </div>
-            </a>
-          </div>
-        </div>
+
         <script>
         let file = "https://api.weatherapi.com/v1/current.json?key=6ac1c5b7176b487c96803538231804&q=L7E1R9&aqi=no"
 async function getText(file) {
@@ -698,31 +643,7 @@ async function getText(file) {
 }
 getText(file);
 </script>
-        <div class="featured articles-section">
-          <h2 class="title"><span class="value" style="margin: auto;">Weather Center</span></h2>
-          <div class="featured-articles articles">
-            <a class="featured-article article" href="#" style="  margin: auto;" >
-              <img src="https://placehold.co/64x64" style="width: 64px; height: 64px; margin: auto;" id="weatherimage"/>
-              <div class="article-info">
-                <h1 style="margin: auto; font-weight: bold; color: white;" id="temp">Undefined</h1>
-                                <h1 style="margin: auto; color: white;" id="condition">undefined</h1>
 
-                <p style="margin: auto; display:inline;" id="fl">undefined</p>
-                <p style="margin: auto; display:inline;" id="ws">undefined</p>
-                <p style="margin: auto; display:inline;" id="wd">Wind Direction:</p>
-                <p style="margin: auto; display:inline;" id="uv">UV:</p>
-                <p style="margin: auto; display:inline;" id="lu">undefined</p>
-
-
-              </div>
-            </a>
-        
-          </div>
-        </div>
-        
-        
-      </div>
-    </div>
     
     <footer>
     	<style>
@@ -778,24 +699,7 @@ border: 0;
     font-family: Rubik;
 }
 </style>
-    		<center>
-			<div id="google_translate_element" style=""></div>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
-</script>
-		</center><br><br>
-    <center><a href="https://codepen.io/Hyperplexed/"><p style="color: rgb(80, 80, 80);">Website Template From Hyperplexed (ty)</p></center></a><p style="color: rgb(80, 80, 80); font-size: 8px">Copyright (c) 2023 by Hyperplexed (https://codepen.io/Hyperplexed/pen/poVWobN)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-</p>
-    </footer>
   </div>
 	<script>//function sweetal() {
 		// Swal.fire({
