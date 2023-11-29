@@ -5,7 +5,8 @@
     font-family: "Poppins", sans-serif;
   }
   body {
-    background-color: #1a1a1a;
+    background: transparent !important;
+    border: none !important;
   }
   .container {
     width: 21.87em;
