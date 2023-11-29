@@ -597,6 +597,8 @@ async function getText(file) {
                       document.getElementById("uv").innerHTML = "UV: " + obj.current.uv;
                             document.getElementById("lu").innerHTML = "Last Updated: " + obj.current.last_updated;
                             document.getElementById("weatherimage").src = "https:" + obj.current.condition.icon;
+	                              document.getElementById("secondicon").src = "https:" + obj.current.condition.icon;
+
 
 
 
@@ -684,7 +686,7 @@ border: 0;
 <script>
   setTimeout(function () {
     location.reload(true); // The true parameter forces a hard refresh, bypassing the cache
-  }, 60000); // 60000 milliseconds = 1 minute
+  }, 300000); // 60000 milliseconds = 1 minute
 </script>
 
 </body>
