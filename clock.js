@@ -1,4 +1,3 @@
-moment.tz.setDefault("America/Chicago");
 let dateContainer = document.querySelector(".date-container");
 let clockContainer = document.querySelector(".clock-container");
 const weekdays = [
